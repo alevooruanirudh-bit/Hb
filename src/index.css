@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * HemoScan design tokens. Values are RGB triplets so Tailwind opacity modifiers work.
+ * Light theme is the default; `.dark` on <html> switches to the dark palette.
+ */
+@layer base {
+  :root {
+    --primary: 178 58 72; /* #B23A48 rose-crimson */
+    --primary-light: 252 228 230; /* #FCE4E6 */
+    --primary-dark: 142 42 55;
+    --on-primary: 255 255 255;
+    --secondary: 42 127 127; /* #2A7F7F teal */
+    --secondary-light: 221 240 240;
+    --on-secondary: 255 255 255;
+    --background: 255 248 245; /* #FFF8F5 */
+    --surface: 255 255 255;
+    --surface-muted: 250 240 237;
+    --ink: 43 43 43; /* #2B2B2B */
+    --ink-muted: 107 107 107; /* #6B6B6B */
+    --line: 236 224 220;
+    --shadow: 120 50 50;
+    --sev-normal: 46 158 91; /* #2E9E5B */
+    --sev-mild: 224 168 0; /* #E0A800 */
+    --sev-moderate: 232 106 28; /* #E86A1C */
+    --sev-severe: 198 40 40; /* #C62828 */
+    color-scheme: light;
+  }
+
+  .dark {
+    --primary: 232 110 124;
+    --primary-light: 72 32 38;
+    --primary-dark: 250 170 180;
+    --on-primary: 30 12 15;
+    --secondary: 94 188 188;
+    --secondary-light: 22 58 58;
+    --on-secondary: 8 30 30;
+    --background: 22 18 19;
+    --surface: 34 29 30;
+    --surface-muted: 44 38 39;
+    --ink: 240 234 232;
+    --ink-muted: 178 168 166;
+    --line: 62 54 55;
+    --shadow: 0 0 0;
+    --sev-normal: 88 200 132;
+    --sev-mild: 242 196 64;
+    --sev-moderate: 246 140 72;
+    --sev-severe: 239 96 96;
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-background text-ink font-sans text-base antialiased;
+    min-height: 100dvh;
+  }
+
+  h1 {
+    @apply text-h1;
+  }
+  h2 {
+    @apply text-h2;
+  }
+  h3 {
+    @apply text-h3;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-4 ring-primary/40 ring-offset-2 ring-offset-background;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-card bg-surface p-5 shadow-soft md:p-6;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}

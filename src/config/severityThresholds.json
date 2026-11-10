@@ -1,0 +1,27 @@
+{
+  "source": "WHO (2011) Haemoglobin concentrations for the diagnosis of anaemia and assessment of severity (WHO/NMH/NHD/MNM/11.1) — the cutoffs also used by India's Anemia Mukt Bharat programme and NFHS. Values in g/dL. Each group lists the LOWER bound of each band: hb >= normal -> Normal; hb >= mild -> Mild; hb >= moderate -> Moderate; otherwise Severe. Classification uses the altitude-adjusted value (see altitudeAdjustments).",
+  "upperNote": "`upper` = typical upper limit of the healthy range from common clinical laboratory reference intervals (WHO defines only the lower anemia cutoff; labs differ slightly). Values above it are shown as 'higher than usual' with a suggestion to mention it to a doctor.",
+  "version": "WHO-2011",
+  "groups": {
+    "child_6_59m": { "minAge": 0, "maxAge": 5, "normal": 11.0, "mild": 10.0, "moderate": 7.0, "upper": 13.5 },
+    "child_5_11y": { "minAge": 5, "maxAge": 12, "normal": 11.5, "mild": 11.0, "moderate": 8.0, "upper": 15.5 },
+    "child_12_14y": { "minAge": 12, "maxAge": 15, "normal": 12.0, "mild": 11.0, "moderate": 8.0, "upper": 16.0 },
+    "women_15plus": { "minAge": 15, "maxAge": 200, "sex": "female", "normal": 12.0, "mild": 11.0, "moderate": 8.0, "upper": 15.5 },
+    "pregnant": { "minAge": 0, "maxAge": 200, "sex": "female", "pregnant": true, "normal": 11.0, "mild": 10.0, "moderate": 7.0, "upper": 14.5 },
+    "men_15plus": { "minAge": 15, "maxAge": 200, "sex": "male", "normal": 13.0, "mild": 11.0, "moderate": 8.0, "upper": 17.0 }
+  },
+  "altitudeAdjustments": {
+    "_comment": "WHO (2011) Table 3: amount (g/dL) SUBTRACTED from measured Hb for residents at elevation (metres above sea level). Bands are lower bounds. WHO's 2024 guideline revises these (smaller) — replace here if you adopt it.",
+    "bands": [
+      { "minM": 0, "adjust": 0 },
+      { "minM": 1000, "adjust": 0.2 },
+      { "minM": 1500, "adjust": 0.5 },
+      { "minM": 2000, "adjust": 0.8 },
+      { "minM": 2500, "adjust": 1.3 },
+      { "minM": 3000, "adjust": 1.9 },
+      { "minM": 3500, "adjust": 2.7 },
+      { "minM": 4000, "adjust": 3.5 },
+      { "minM": 4500, "adjust": 4.5 }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+# HemoScan training pipeline — Python 3.10 or 3.11.
+# Versions are pinned to combinations that work together (TF 2.15 ↔ tensorflowjs 4.17 ↔ numpy < 2).
+numpy>=1.26,<2.0
+pandas>=2.1,<2.3
+opencv-python-headless>=4.9,<4.11   # same OpenCV algorithms as OpenCV.js in the app
+scikit-learn>=1.3,<1.6
+xgboost==2.0.3                       # quantile regression (reg:quantileerror)
+m2cgen==0.10.0                       # tree models → JavaScript (export.py verifies the output)
+tensorflow==2.15.1                   # MobileNetV3-Small feature extractor
+tensorflowjs==4.17.0                 # CNN → TF.js graph model
+mediapipe==0.10.14                   # hand / face landmarks for ROI (same .task models as the app)
+matplotlib>=3.8
+joblib>=1.3
+pytest>=8

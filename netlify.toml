@@ -1,0 +1,14 @@
+# Netlify: `netlify deploy --prod` (or connect the repo). HTTPS is automatic — required for the camera.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"

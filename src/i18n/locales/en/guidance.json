@@ -1,0 +1,146 @@
+{
+  "causes": {
+    "ironDeficiency": {
+      "title": "Low iron in the body",
+      "body": "The most common reason for low hemoglobin in India. The body needs iron to make red blood cells."
+    },
+    "lowIronDiet": {
+      "title": "Not enough iron in food",
+      "body": "Vegetarian meals can be low in easily absorbed iron unless they include greens, pulses, ragi and jaggery every day."
+    },
+    "poorAbsorption": {
+      "title": "Iron not being absorbed well",
+      "body": "Tea or coffee with meals can block iron absorption from food."
+    },
+    "b12Folate": {
+      "title": "Low vitamin B12 or folate",
+      "body": "These vitamins are also needed to make blood. B12 is found mostly in milk, curd, eggs and meat."
+    },
+    "menstrualLoss": {
+      "title": "Heavy periods",
+      "body": "Losing a lot of blood every month can slowly lower hemoglobin."
+    },
+    "bloodLoss": {
+      "title": "Recent blood loss",
+      "body": "Bleeding from injury, surgery, childbirth, piles or the stomach can lower hemoglobin. This needs a doctor's check."
+    },
+    "worms": {
+      "title": "Worm infection",
+      "body": "Stomach worms (common where people walk barefoot or water is unsafe) can cause blood and iron loss."
+    },
+    "pregnancyDemand": {
+      "title": "Extra needs in pregnancy",
+      "body": "The baby needs iron too, so pregnant women need much more iron than usual."
+    },
+    "otherConditions": {
+      "title": "Other health conditions",
+      "body": "Sometimes low hemoglobin comes from conditions like thalassemia, sickle cell disease, kidney disease or long-term infections. Only a doctor and blood tests can tell."
+    }
+  },
+  "actions": {
+    "keepHealthyDiet": {
+      "title": "Keep eating well",
+      "body": "Continue a balanced diet with greens, pulses, ragi, fruits and, if you eat them, eggs, fish or meat."
+    },
+    "recheckYearly": {
+      "title": "Check again later",
+      "body": "Re-check every 6–12 months, or sooner if you feel tired, dizzy or breathless."
+    },
+    "ironRichFoods": {
+      "title": "Eat iron-rich foods daily",
+      "body": "Ragi, jaggery (bellam/gud), spinach, gongura, drumstick (moringa) leaves, amaranth, dates, rajma, chana and other lentils. If you eat them: eggs, fish, chicken, mutton and liver."
+    },
+    "vitaminC": {
+      "title": "Add vitamin C to meals",
+      "body": "Lemon, amla, guava, orange or tomato with meals helps the body absorb iron from plant foods."
+    },
+    "avoidTeaWithMeals": {
+      "title": "Avoid tea or coffee with meals",
+      "body": "Drink tea or coffee at least 1 hour before or after food, not with it."
+    },
+    "deworming": {
+      "title": "Take deworming tablets",
+      "body": "Ask your ASHA worker, Anganwadi or PHC about free deworming tablets (National Deworming Day). Wear footwear outside and wash hands before eating."
+    },
+    "b12Foods": {
+      "title": "Get vitamin B12",
+      "body": "Include milk, curd, buttermilk or paneer daily. Eggs help if you eat them. Ask a health worker whether you need B12 supplements."
+    },
+    "ifaTablets": {
+      "title": "Ask about free IFA tablets",
+      "body": "Under Anemia Mukt Bharat, iron-folic acid (IFA) tablets are given free through ASHA workers, Anganwadis, schools and PHCs. Take them only as advised by a health worker."
+    },
+    "ironCookware": {
+      "title": "Cook in an iron kadai",
+      "body": "Cooking sour foods (like tomato or tamarind curries) in an iron pan adds some iron to food."
+    },
+    "pregnancyCare": {
+      "title": "Keep up antenatal checkups",
+      "body": "Go for all antenatal (ANC) visits. Your hemoglobin will be tested and IFA/calcium tablets are given free."
+    },
+    "restAndSafety": {
+      "title": "Rest and stay safe",
+      "body": "If you feel dizzy, sit or lie down right away. Avoid heavy work, driving or climbing until you feel better."
+    },
+    "confirmBloodTest": {
+      "title": "Get a blood test",
+      "body": "This app is a screening tool. A simple hemoglobin blood test at the PHC or a lab will confirm the result."
+    }
+  },
+  "referral": {
+    "none": {
+      "title": "No sign of anemia",
+      "body": "Your estimated hemoglobin is in the normal range. Keep eating well and check again later."
+    },
+    "routine": {
+      "title": "Get a blood test when you can",
+      "body": "Visit your nearest PHC, Anganwadi or health worker in the next few weeks to confirm with a blood test."
+    },
+    "soon": {
+      "title": "Please see a doctor soon",
+      "body": "Visit a doctor or PHC within the next few days for a blood test and treatment advice."
+    },
+    "urgent": {
+      "title": "Get medical attention now",
+      "body": "Your estimated hemoglobin is very low. Please go to a doctor, PHC or hospital today for a blood test. If you feel breathless, have chest pain or faint, call 108 for an ambulance."
+    }
+  },
+  "symptomWarning": "Tiredness or dizziness together with anemia means you should not wait — see a health worker soon.",
+  "resources": {
+    "title": "Help near you",
+    "amb": {
+      "title": "Anemia Mukt Bharat",
+      "body": "Government of India programme offering free testing, IFA tablets and deworming for children, adolescents, women and pregnant mothers."
+    },
+    "phc": {
+      "title": "Primary Health Centre (PHC)",
+      "body": "Free hemoglobin testing and doctor consultation near you."
+    },
+    "anganwadi": {
+      "title": "Anganwadi / ASHA worker",
+      "body": "Your local health worker can give IFA tablets, deworming tablets and nutrition support."
+    },
+    "emergency": { "title": "Emergency: 108", "body": "Call 108 for a free ambulance in an emergency." }
+  },
+  "diet": {
+    "title": "Foods that help your blood",
+    "intro": "Local, affordable foods rich in iron, folate and vitamin B12.",
+    "foods": {
+      "ragi": { "name": "Ragi (finger millet)", "note": "Ragi malt, ragi mudde or rotti" },
+      "jaggery": { "name": "Jaggery (bellam / gud)", "note": "Use instead of sugar; with peanuts or sesame" },
+      "greens": {
+        "name": "Green leafy vegetables",
+        "note": "Spinach (palak), gongura, amaranth, drumstick leaves"
+      },
+      "dates": { "name": "Dates and raisins", "note": "A handful as a snack" },
+      "lentils": { "name": "Lentils and beans", "note": "Dal, chana, rajma, horse gram (ulavalu)" },
+      "sesame": { "name": "Sesame and peanuts", "note": "Til laddoo, peanut chikki" },
+      "eggs": { "name": "Eggs", "note": "Good source of iron and vitamin B12" },
+      "meat": { "name": "Meat, fish and liver", "note": "Iron that the body absorbs most easily" },
+      "citrus": { "name": "Vitamin C fruits", "note": "Amla, guava, lemon, orange — eat with meals" },
+      "dairy": { "name": "Milk and curd", "note": "Vitamin B12 for vegetarians" }
+    },
+    "pairingTitle": "Smart pairing",
+    "pairing": "Pair iron foods with vitamin C (lemon on dal, amla with meals) and keep tea or coffee away from mealtimes."
+  }
+}

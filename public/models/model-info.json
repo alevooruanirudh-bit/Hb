@@ -1,0 +1,264 @@
+{
+  "version": "2026.10-india-v4",
+  "exportedAt": "2026-10-14",
+  "featureRanges": {
+    "eye": {
+      "adult": {
+        "a_p50": [
+          0.1795,
+          0.3718
+        ],
+        "a_mean": [
+          0.1816,
+          0.3579
+        ],
+        "rg_ratio": [
+          1.3776,
+          2.8766
+        ],
+        "erythema_index": [
+          0.1433,
+          0.478
+        ],
+        "s_mean": [
+          0.2781,
+          0.6645
+        ],
+        "L_mean": [
+          0.3418,
+          0.6666
+        ]
+      },
+      "child": {
+        "a_p50": [
+          0.0989,
+          0.3479
+        ],
+        "a_mean": [
+          0.1016,
+          0.336
+        ],
+        "rg_ratio": [
+          1.2316,
+          2.7547
+        ],
+        "erythema_index": [
+          0.0912,
+          0.4497
+        ],
+        "s_mean": [
+          0.2199,
+          0.7835
+        ],
+        "L_mean": [
+          0.266,
+          0.7955
+        ]
+      }
+    },
+    "nails": {
+      "adult": {
+        "a_p50": [
+          -0.0479,
+          -0.0199
+        ],
+        "a_mean": [
+          -0.0455,
+          -0.0174
+        ],
+        "rg_ratio": [
+          0.8668,
+          0.9554
+        ],
+        "erythema_index": [
+          -0.0625,
+          -0.0203
+        ],
+        "s_mean": [
+          0.0692,
+          0.1953
+        ],
+        "L_mean": [
+          0.6724,
+          0.9064
+        ]
+      }
+    }
+  },
+  "cnn": null,
+  "regions": [
+    "eye",
+    "nails"
+  ],
+  "metrics": {
+    "per_region_mae": {
+      "eye": 1.3423242701116593,
+      "nails": 1.777420381658124
+    },
+    "per_region_n": {
+      "eye": 924,
+      "nails": 195
+    },
+    "conformal_offsets": {
+      "eye": 0.799,
+      "nails": 0.816
+    },
+    "cv_mae_app": 1.4181453083168072,
+    "palm_classifier": {
+      "auc": 0.847,
+      "sensitivity": 0.79,
+      "specificity": 0.78,
+      "threshold": 0.61
+    }
+  },
+  "datasets": [
+    {
+      "region": "eye",
+      "name": "CP-AnemiC (A Conjunctival Pallor) Dataset from Ghana",
+      "doi": "10.17632/m53vz6b7fx.1",
+      "license": "CC BY 4.0",
+      "population": "710 children aged 6–59 months, Ghana",
+      "n": 710,
+      "minAge": 0.5,
+      "maxAge": 5
+    },
+    {
+      "region": "eye",
+      "name": "Eyes-defy-anemia (India + Italy)",
+      "doi": "Kaggle harshwardhanfartale/eyes-defy-anemia; IEEE DataPort",
+      "license": "see dataset page",
+      "population": "adults aged 18–90: 95 from India, 123 from Italy",
+      "n": 214,
+      "minAge": 18,
+      "maxAge": 90
+    },
+    {
+      "region": "nails",
+      "name": "Dataset of human skin and fingernails images for non-invasive haemoglobin level assessment",
+      "doi": "10.6084/m9.figshare.c.6760179",
+      "license": "CC0",
+      "population": "250 adults aged 18–95, Moscow (Russia)",
+      "n": 195,
+      "minAge": 18,
+      "maxAge": 95
+    },
+    {
+      "name": "Anemia Detection using Palpable Palm Image Datasets from Ghana",
+      "doi": "10.17632/ccr8cm22vz.1",
+      "license": "CC BY 4.0",
+      "population": "children aged 6–59 months, Ghana",
+      "photos": 475,
+      "minAge": 0.5,
+      "maxAge": 5,
+      "region": "palm",
+      "n": 475,
+      "kind": "classifier"
+    }
+  ],
+  "evaluation": {
+    "method": "person-grouped 5-fold cross-validation (out-of-fold)",
+    "groups": {
+      "overall": {
+        "n": 1119,
+        "accuracy": 0.8222,
+        "precision": 0.8016,
+        "recall": 0.8624,
+        "specificity": 0.7808,
+        "f1": 0.8309,
+        "balancedAccuracy": 0.8216,
+        "auc": 0.8819,
+        "severityAccuracy": 0.6166,
+        "mae": 1.418,
+        "rmse": 1.894,
+        "r2": 0.4786,
+        "pearsonR": 0.6944,
+        "within1": 0.4772,
+        "within2": 0.7444,
+        "rangeCoverage": 0.8016,
+        "confusion": {
+          "tp": 489,
+          "fp": 121,
+          "tn": 431,
+          "fn": 78
+        }
+      },
+      "eye": {
+        "n": 924,
+        "accuracy": 0.8409,
+        "precision": 0.8234,
+        "recall": 0.911,
+        "specificity": 0.7518,
+        "f1": 0.865,
+        "balancedAccuracy": 0.8314,
+        "auc": 0.9037,
+        "severityAccuracy": 0.6039,
+        "mae": 1.342,
+        "rmse": 1.787,
+        "r2": 0.4913,
+        "pearsonR": 0.7054,
+        "within1": 0.5,
+        "within2": 0.7587,
+        "rangeCoverage": 0.8009,
+        "confusion": {
+          "tp": 471,
+          "fp": 101,
+          "tn": 306,
+          "fn": 46
+        }
+      },
+      "nails": {
+        "n": 195,
+        "accuracy": 0.7333,
+        "precision": 0.4737,
+        "recall": 0.36,
+        "specificity": 0.8621,
+        "f1": 0.4091,
+        "balancedAccuracy": 0.611,
+        "auc": 0.6735,
+        "severityAccuracy": 0.6769,
+        "mae": 1.777,
+        "rmse": 2.338,
+        "r2": 0.1329,
+        "pearsonR": 0.3693,
+        "within1": 0.3692,
+        "within2": 0.6769,
+        "rangeCoverage": 0.8051,
+        "confusion": {
+          "tp": 18,
+          "fp": 20,
+          "tn": 125,
+          "fn": 32
+        }
+      },
+      "indianAdults": {
+        "n": 94,
+        "accuracy": 0.7979,
+        "precision": 0.8,
+        "recall": 0.9552,
+        "specificity": 0.4074,
+        "f1": 0.8707,
+        "balancedAccuracy": 0.6813,
+        "auc": 0.7347,
+        "severityAccuracy": 0.5638,
+        "mae": 1.29,
+        "rmse": 1.629,
+        "r2": 0.3757,
+        "pearsonR": 0.6198,
+        "within1": 0.4681,
+        "within2": 0.7128,
+        "rangeCoverage": 0.6809,
+        "confusion": {
+          "tp": 64,
+          "fp": 16,
+          "tn": 11,
+          "fn": 3
+        }
+      }
+    },
+    "palm": {
+      "auc": 0.847,
+      "sensitivity": 0.79,
+      "specificity": 0.78
+    }
+  }
+}

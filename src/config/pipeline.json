@@ -1,0 +1,184 @@
+{
+  "_comment": "Single source of truth for the on-device pipeline, shared by the app (src/config/pipelineConfig.ts, src/imageProcessing/colorFeatures.ts) and training/ (training/common.py). Changing preprocessing or features requires re-extracting features and retraining the models.",
+  "uncertainty": {
+    "_comment": "Likely range shown with every estimate. Per region: half of the XGBoost 10-90% quantile interval, or defaultHalfWidth when there is none (backup model). Widened when photo quality, detection confidence or confounder factor are low. Fused range = weighted region half-widths plus half of any disagreement between regions, clamped to [minHalfWidth, maxHalfWidth] (photo methods are never more precise than about +/-0.6 g/dL).",
+    "minHalfWidth": 0.6,
+    "defaultHalfWidth": 1.2,
+    "maxHalfWidth": 4.0,
+    "lowConfidenceWiden": 0.8,
+    "populationMismatchWiden": 1.3
+  },
+  "preprocessing": {
+    "analysisMaxSide": 640,
+    "maxWhiteBalanceGain": 1.8,
+    "claheClipLimit": 2.0,
+    "claheTileGrid": 8,
+    "denoiseNoiseThreshold": 4,
+    "denoiseMaxNoise": 14,
+    "roiSize": 224,
+    "unsharpAmount": 0.8,
+    "unsharpSigma": 1.2
+  },
+  "features": {
+    "histogramBins": 8,
+    "glareLuma": 250,
+    "shadowLuma": 12,
+    "aHistMin": -10,
+    "aHistMax": 60,
+    "cnnEmbeddingSize": 576,
+    "cnnTimeoutMs": 4000
+  },
+  "quality": {
+    "blurFailThreshold": 60,
+    "blurGoodThreshold": 140,
+    "overexposedLevel": 245,
+    "underexposedLevel": 15,
+    "minMeanBrightness": 55,
+    "maxMeanBrightness": 215,
+    "goodMinMeanBrightness": 80,
+    "goodMaxMeanBrightness": 195,
+    "maxClippedFail": 0.25,
+    "maxClippedWarn": 0.08,
+    "passScore": 0.7,
+    "minSide": 96,
+    "sharpnessSide": 320,
+    "sharpnessGrid": 6,
+    "sharpnessPercentile": 0.9,
+    "_blurComment": "Blur is judged by sharpnessScore(): Laplacian variance of the sharpest 10% of a 6x6 tile grid at 320 px. Calibrated on real Indian phone/WhatsApp photos: sharp originals 200-700; Gaussian sigma 3 about 75-130 (borderline -> auto-sharpened); sigma 5+ or strong motion blur below 60 (rejected)."
+  },
+  "fallback": {
+    "minPlausibleHb": 4,
+    "maxPlausibleHb": 20,
+    "maxIntervalWidth": 8.0,
+    "_comment": "maxIntervalWidth: on the public training data XGBoost beat the Random Forest even on its least certain 10 % of cases, so only extreme intervals (> 8 g/dL) trigger the fallback."
+  },
+  "fusion": {
+    "regionWeights": {
+      "eye": 1.0,
+      "nails": 0.9,
+      "palm": 0.55
+    },
+    "fallbackPenalty": 0.8,
+    "highReliabilityMin": 0.6,
+    "maxRegionSpread": 2.5,
+    "populationMismatchPenalty": 0.7,
+    "inverseVarianceWeighting": true
+  },
+  "guideBoxes": {
+    "eye": {
+      "x": 0.15,
+      "y": 0.33,
+      "width": 0.7,
+      "height": 0.34
+    },
+    "nails": {
+      "x": 0.12,
+      "y": 0.22,
+      "width": 0.76,
+      "height": 0.5
+    },
+    "palm": {
+      "x": 0.2,
+      "y": 0.25,
+      "width": 0.6,
+      "height": 0.5
+    }
+  },
+  "skinTone": {
+    "_comment": "Individual Typology Angle (ITA°) = atan((L* − 50) / b*) × 180/π on skin pixels (Chardon et al. 1991). Lower ITA = darker skin. Pallor on the palm is harder to see on darker skin, so the palm's fusion weight is multiplied by palmWeightFactor for the category.",
+    "categories": [
+      {
+        "id": "veryLight",
+        "minIta": 55,
+        "palmWeightFactor": 1.0
+      },
+      {
+        "id": "light",
+        "minIta": 41,
+        "palmWeightFactor": 1.0
+      },
+      {
+        "id": "intermediate",
+        "minIta": 28,
+        "palmWeightFactor": 0.9
+      },
+      {
+        "id": "tan",
+        "minIta": 10,
+        "palmWeightFactor": 0.75
+      },
+      {
+        "id": "brown",
+        "minIta": -30,
+        "palmWeightFactor": 0.55
+      },
+      {
+        "id": "dark",
+        "minIta": -999,
+        "palmWeightFactor": 0.35
+      }
+    ],
+    "minSkinPixels": 300
+  },
+  "confounders": {
+    "_comment": "Weight multipliers for things that make a region look redder or paler than the blood really is. 0 = region excluded from the result. Reported conditions come from the pre-scan checklist; image flags are detected automatically.",
+    "reported": {
+      "eye": {
+        "criedOrRubbed": 0.3,
+        "eyeIrritation": 0.2
+      },
+      "nails": {
+        "nailPolishOrHenna": 0,
+        "fingerInjury": 0.3,
+        "nailsCutShort": 0.5,
+        "coldHands": 0.6
+      },
+      "palm": {
+        "hennaOnPalm": 0,
+        "hotWaterOrExercise": 0.5,
+        "coldHands": 0.6
+      }
+    },
+    "image": {
+      "scleraRed": 0.3,
+      "nailCoating": 0,
+      "nailDarkSpot": 0.3,
+      "hennaDetected": 0
+    },
+    "detection": {
+      "scleraMinPixels": 60,
+      "scleraMinL": 55,
+      "scleraMaxChroma": 35,
+      "scleraRedA": 10,
+      "coatingSaturation": 0.7,
+      "coatingFraction": 0.35,
+      "offSkinHueFraction": 0.3,
+      "darkSpotValue": 0.22,
+      "darkSpotFraction": 0.08
+    }
+  },
+  "outOfRange": {
+    "_comment": "A region is 'outside the training range' when at least minFeaturesOutside of its key colour features fall outside the 1st-99th percentile of the training photos for the person's age group (adult/child). Such regions count less and get a wider range.",
+    "minFeaturesOutside": 2,
+    "weightPenalty": 0.5,
+    "widen": 1.5
+  },
+  "personalCalibration": {
+    "_comment": "Offset = mean(lab Hb - photo estimate) over the person's blood tests taken within maxDaysApart of a scan, shrunk by n/(n+shrinkK) and capped.",
+    "maxDaysApart": 7,
+    "shrinkK": 0.5,
+    "maxOffset": 4.0,
+    "maxAgeDays": 365
+  },
+  "deviceLearning": {
+    "_comment": "Learns this phone's camera/lighting bias from every blood test entered on the device (all profiles). correction(est) = a + c*(est - center), fitted with shrinkage; only switched on when it lowers the leave-one-person-out error.",
+    "minPairs": 5,
+    "minPeople": 2,
+    "shrinkK": 3,
+    "slopeRidge": 20,
+    "maxOffset": 3.0,
+    "maxSlope": 0.6,
+    "minImprovement": 0.1,
+    "maxAgeDays": 730
+  }
+}
