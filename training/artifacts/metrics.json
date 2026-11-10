@@ -1,0 +1,106 @@
+{
+  "method": "person-grouped 5-fold cross-validation (out-of-fold)",
+  "groups": {
+    "overall": {
+      "n": 1119,
+      "accuracy": 0.8222,
+      "precision": 0.8016,
+      "recall": 0.8624,
+      "specificity": 0.7808,
+      "f1": 0.8309,
+      "balancedAccuracy": 0.8216,
+      "auc": 0.8819,
+      "severityAccuracy": 0.6166,
+      "mae": 1.418,
+      "rmse": 1.894,
+      "r2": 0.4786,
+      "pearsonR": 0.6944,
+      "within1": 0.4772,
+      "within2": 0.7444,
+      "rangeCoverage": 0.8016,
+      "confusion": {
+        "tp": 489,
+        "fp": 121,
+        "tn": 431,
+        "fn": 78
+      }
+    },
+    "eye": {
+      "n": 924,
+      "accuracy": 0.8409,
+      "precision": 0.8234,
+      "recall": 0.911,
+      "specificity": 0.7518,
+      "f1": 0.865,
+      "balancedAccuracy": 0.8314,
+      "auc": 0.9037,
+      "severityAccuracy": 0.6039,
+      "mae": 1.342,
+      "rmse": 1.787,
+      "r2": 0.4913,
+      "pearsonR": 0.7054,
+      "within1": 0.5,
+      "within2": 0.7587,
+      "rangeCoverage": 0.8009,
+      "confusion": {
+        "tp": 471,
+        "fp": 101,
+        "tn": 306,
+        "fn": 46
+      }
+    },
+    "nails": {
+      "n": 195,
+      "accuracy": 0.7333,
+      "precision": 0.4737,
+      "recall": 0.36,
+      "specificity": 0.8621,
+      "f1": 0.4091,
+      "balancedAccuracy": 0.611,
+      "auc": 0.6735,
+      "severityAccuracy": 0.6769,
+      "mae": 1.777,
+      "rmse": 2.338,
+      "r2": 0.1329,
+      "pearsonR": 0.3693,
+      "within1": 0.3692,
+      "within2": 0.6769,
+      "rangeCoverage": 0.8051,
+      "confusion": {
+        "tp": 18,
+        "fp": 20,
+        "tn": 125,
+        "fn": 32
+      }
+    },
+    "indianAdults": {
+      "n": 94,
+      "accuracy": 0.7979,
+      "precision": 0.8,
+      "recall": 0.9552,
+      "specificity": 0.4074,
+      "f1": 0.8707,
+      "balancedAccuracy": 0.6813,
+      "auc": 0.7347,
+      "severityAccuracy": 0.5638,
+      "mae": 1.29,
+      "rmse": 1.629,
+      "r2": 0.3757,
+      "pearsonR": 0.6198,
+      "within1": 0.4681,
+      "within2": 0.7128,
+      "rangeCoverage": 0.6809,
+      "confusion": {
+        "tp": 64,
+        "fp": 16,
+        "tn": 11,
+        "fn": 3
+      }
+    }
+  },
+  "palm": {
+    "auc": 0.847,
+    "sensitivity": 0.79,
+    "specificity": 0.78
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "task": "anemic vs non-anemic (Hb < 11 g/dL, children 6–59 months)",
+  "dataset": {
+    "name": "Anemia Detection using Palpable Palm Image Datasets from Ghana",
+    "doi": "10.17632/ccr8cm22vz.1",
+    "license": "CC BY 4.0",
+    "population": "children aged 6–59 months, Ghana",
+    "photos": 475,
+    "minAge": 0.5,
+    "maxAge": 5
+  },
+  "auc": 0.847,
+  "threshold": 0.61,
+  "sensitivity": 0.79,
+  "specificity": 0.78
+}

@@ -1,0 +1,35 @@
+{
+  "trained_at": "2026-10-14",
+  "n_samples": 1119,
+  "n_subjects": 1119,
+  "xgb_features": 60,
+  "uses_cnn": false,
+  "uses_demographics": true,
+  "per_dataset_mae": {
+    "CP-AnemiC (Ghana, children)": 1.365310397461772,
+    "Eyes-defy-anemia (India, adults)": 1.2904961910653623,
+    "Eyes-defy-anemia (Italy, adults)": 1.246921678543091,
+    "Skin & fingernails (Moscow, adults)": 1.777420381658124
+  },
+  "rf_features": 58,
+  "cv_mae_xgb": 1.4139929828524482,
+  "cv_mae_rf": 1.5022204571780613,
+  "cv_mae_app": 1.4181453083168072,
+  "interval_coverage_raw": 0.6050044682752458,
+  "conformal_offsets": {
+    "eye": 0.799,
+    "nails": 0.816
+  },
+  "regions": [
+    "eye",
+    "nails"
+  ],
+  "per_region_mae": {
+    "eye": 1.3423242701116593,
+    "nails": 1.777420381658124
+  },
+  "per_region_n": {
+    "eye": 924,
+    "nails": 195
+  }
+}

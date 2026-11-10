@@ -1,0 +1,32 @@
+[
+  {
+    "region": "eye",
+    "name": "CP-AnemiC (A Conjunctival Pallor) Dataset from Ghana",
+    "doi": "10.17632/m53vz6b7fx.1",
+    "license": "CC BY 4.0",
+    "population": "710 children aged 6–59 months, Ghana",
+    "n": 710,
+    "minAge": 0.5,
+    "maxAge": 5
+  },
+  {
+    "region": "eye",
+    "name": "Eyes-defy-anemia (India + Italy)",
+    "doi": "Kaggle harshwardhanfartale/eyes-defy-anemia; IEEE DataPort",
+    "license": "see dataset page",
+    "population": "adults aged 18–90: 95 from India, 123 from Italy",
+    "n": 214,
+    "minAge": 18,
+    "maxAge": 90
+  },
+  {
+    "region": "nails",
+    "name": "Dataset of human skin and fingernails images for non-invasive haemoglobin level assessment",
+    "doi": "10.6084/m9.figshare.c.6760179",
+    "license": "CC0",
+    "population": "250 adults aged 18–95, Moscow (Russia)",
+    "n": 195,
+    "minAge": 18,
+    "maxAge": 95
+  }
+]

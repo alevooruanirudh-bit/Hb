@@ -13,7 +13,6 @@ android/.gradle
 android/local.properties
 *.keystore
 training/.venv
-training/artifacts
 __pycache__
 *.pyc
 .cache
